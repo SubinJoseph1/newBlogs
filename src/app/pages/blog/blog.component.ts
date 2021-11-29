@@ -17,7 +17,7 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id=this.activate.snapshot.params['id'];
+    this.id=this.activate.snapshot.params['idx'];
     console.log("id",this.id);
     this.blogs=this.service.specifigblog(this.id);
     // this.blogs=this.activate.params.pipe(
