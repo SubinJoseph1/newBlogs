@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="blogs" *ngFor="let blog of homeBlogs;let i=index">
+            <div class="blogImage">
+                <img src="{{blog.urlToImage}}"  *ngIf="blog.urlToImage != null else image"> 
+                <ng-template #image>
+                    <img src="../../../assets/Image/tesla.jpg">
+                </ng-template>
+            </div>
+            <div class="blogContent">
+                <h3>Title:<span>{{blog.title}}</span></h3>
+                <h3>Author:<span>{{blog.author}}</span></h3>
+                <h3>Description:<span>{{blog.description}}</span></h3>
+                <!-- <a [routerLink]="['',{outlets:{blog:['blog',blog.url]}}]">Read More</a> -->
+                <a [routerLink]="['/blog',i]">Read More</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>

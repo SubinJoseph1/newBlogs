@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="blogs">
+            <div class="blogimage">
+                <img src="{{blogs.urlToImage}}" *ngIf="blogs.urlToImage != null else image">
+                <ng-template #image>
+                    <img src="../../../assets/Image/tesla.jpg">
+                </ng-template>
+            </div>
+            <div class="blogContent">
+                <h3>Title:<span>{{blogs.title}}</span></h3>
+                <h3>Author:<span>{{blogs.author}}</span></h3>
+                <h3>Content:<span>{{blogs.content}}</span></h3>
+                <h3>Description:<span>{{blogs.description}}</span></h3>
+                <h3>Published At:<span>{{blogs.publishedAt}}</span></h3>
+            </div>
+        </div>
+        <button type="button" (click)="delete()">Delete</button>
+        <button type="button" (click)="update(blogs)">Update</button>
+    </div>
+</div>

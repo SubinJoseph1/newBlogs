@@ -1,0 +1,38 @@
+.container{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.blogs{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.blogs .blogImage{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid;
+
+}
+.blogs .blogImage img{
+    width: 100%;
+}
+.blogs .blogContent{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid;
+    margin-bottom: 20px;
+}
+
+.blogContent h3{
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.blogContent span{
+    margin-left: 10px;
+    font-weight: lighter;
+    font-size: 15px;
+    font-family:T'imes New Roman', Times, serif;
+}

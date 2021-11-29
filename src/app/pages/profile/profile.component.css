@@ -1,0 +1,20 @@
+.row{
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid ;
+    border-radius: 10px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+label{
+    display: block;
+    margin-top: 1em;
+}
+input{
+    padding: .5em;
+    border-bottom: 1px solid black;
+}
+
+
+

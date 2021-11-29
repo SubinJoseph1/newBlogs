@@ -1,0 +1,39 @@
+.container-fluid{
+    background-color: black;
+}
+.container{
+    width: 1100px;
+    margin: 0 auto;
+}
+.row{
+    width: 100%;
+}
+.row .col-1{
+    width: 25%;
+    float: left;
+}
+.row .col-1 h3{
+    color: white;
+    font-family:sans-serif;
+}
+.clr{
+    clear: both;
+}
+.col-1 .footerHeader a{
+    text-decoration: none;
+    color: white;
+    font-family:sans-serif;
+    font-size: 20px;
+
+}
+.row .col-1 li{
+    list-style: none;
+    padding-bottom: 15px;
+}
+
+.row .col-1 .footermenu a{
+    text-decoration: none;
+    color: gray;
+    font-family:sans-serif;
+    font-size: 14px;
+}

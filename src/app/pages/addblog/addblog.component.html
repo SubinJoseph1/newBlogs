@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+          <h1 class="text-center">Example Form</h1>
+            <form [formGroup]="exform">
+                <div class="form-group">
+                  <label class="col-form-label">BlogTitle</label>
+                  <input formControlName="title" type="text" class="form-control" >
+                  <small *ngIf="title.invalid && title.touched" class="text-danger">Title is Required</small> 
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Blog Description</label>
+                  <input formControlName="description" type="text" class="form-control" >
+                   <small *ngIf="description.invalid && description.touched" class="text-danger">Description is Required</small> 
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Img Url</label>
+                  <input formControlName="urlToImage" type="text" class="form-control" >
+                  <small *ngIf="urlToImage.invalid && urlToImage.touched" class="text-danger">Imgage is Required</small>
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Content</label>
+                  <input formControlName="content" type="text" class="form-control" >
+                  <small *ngIf="content.invalid && content.touched" class="text-danger">Imgage is Required</small>
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Published Time</label>
+                  <textarea formControlName="publishedAt" class="form-control" ></textarea>
+                   <small *ngIf="publishedAt.invalid && publishedAt.touched" class="text-danger"> Published is Required</small>
+                </div>
+                <button (click)="clicksub(exform)" [disabled]="exform.invalid" type="button" class="btn btn-primary">Blog</button>
+              </form>
+        </div>
+    </div>
+  </div> 
