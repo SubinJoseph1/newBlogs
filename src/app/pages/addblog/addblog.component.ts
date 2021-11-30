@@ -18,8 +18,9 @@ export class AddblogComponent implements OnInit {
 
   ngOnInit(): void {
     this.exform = new FormGroup({
-      'title' : new FormControl('', Validators.required),
       'url':new FormControl('',Validators.required),
+      'title' : new FormControl('', Validators.required),
+      'author' : new FormControl('', Validators.required),
       'description' : new FormControl('',Validators.required),
       'urlToImage' : new FormControl('',Validators.required),
       'publishedAt' : new FormControl('', Validators.required),
@@ -33,8 +34,9 @@ export class AddblogComponent implements OnInit {
     clicksub(exform:any) {
 
       this.blogmodle={
-        title:exform.value.title,
         url:exform.value.url,
+        title:exform.value.title,
+        author:exform.value.author,
         description:exform.value.description,
         urlToImage:exform.value.urlToImage,
         publishedAt:exform.value.publishedAt,
@@ -44,11 +46,15 @@ export class AddblogComponent implements OnInit {
       this.service.formdata(this.blogmodle);
       
     }
+   
+    get url() {
+      return this.exform.get('url');
+    }
     get title() {
       return this.exform.get('title');
     }
-    get url() {
-      return this.exform.get('url');
+    get author() {
+      return this.exform.get('author');
     }
     get description() {
       return this.exform.get('description');
