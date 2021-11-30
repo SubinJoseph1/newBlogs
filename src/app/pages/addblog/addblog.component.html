@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1 class="text-center">Example Form</h1>
+      <h1 class="text-center">Blog's Form</h1>
       <form [formGroup]="exform">
         <div class="form-group">
           <label class="col-form-label">Blog Url</label>
@@ -9,7 +9,7 @@
           <small *ngIf="url.invalid && url.touched" class="text-danger">Url is Required</small>
         </div>
         <div class="form-group">
-          <label class="col-form-label">BlogTitle</label>
+          <label class="col-form-label">Blog Title</label>
           <input formControlName="title" type="text" class="form-control">
           <small *ngIf="title.invalid && title.touched" class="text-danger">Title is Required</small>
         </div>
@@ -35,11 +35,11 @@
         </div>
         <div class="form-group">
           <label class="col-form-label">Published Time</label>
-          <textarea formControlName="publishedAt" class="form-control"></textarea>
+          <input formControlName="publishedAt" class="form-control">
           <small *ngIf="publishedAt.invalid && publishedAt.touched" class="text-danger"> Published is Required</small>
         </div>
         <button (click)="clicksub(exform)" [disabled]="exform.invalid" type="button"
-          class="btn btn-primary">Blog</button>
+          class="btn btn-primary">Add Blog</button>
       </form>
     </div>
   </div>

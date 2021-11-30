@@ -1,6 +1,7 @@
 .form-control.ng-touched.ng-invalid {
     border:1px solid red;
    }
+   
    .form-control.ng-touched.ng-valid {
     border:1px solid green;
    }
@@ -9,17 +10,20 @@
        margin: 0 auto;
        border: 1px solid ;
        border-radius: 10px;
-       text-align: center;
        padding-bottom: 50px;
    }
 
   label{
-      display: block;
-      margin-top: 1em;
+      width: 20%;
+     display:inline-block; 
+     margin-top: 20px;
+
+
   }
 
- input{
-     padding: .5em;
+ .form-control{
+    width: 55%;
+     padding: 6px;
      border-bottom: 1px solid black;
  }
 
@@ -31,4 +35,8 @@
      font-family: 'Lato',sans-serif;
      font-size: .8em;
 
+ }
+ button.btn.btn-primary{
+     margin-left: 40%;
+     margin-top: 20px;
  }
