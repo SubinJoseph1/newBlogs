@@ -11,7 +11,6 @@ import { BlogModule } from '../blog/blog.module';
   ],
   imports: [
     CommonModule,
-    BlogModule,
     HomeRoutingModule
   ]
 })

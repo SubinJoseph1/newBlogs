@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BlogserviceService } from 'src/app/service/blogservice.service';
 
 @Component({
@@ -8,10 +9,18 @@ import { BlogserviceService } from 'src/app/service/blogservice.service';
 })
 export class AllblogsComponent implements OnInit {
   allBlogs:any
-  constructor(private service:BlogserviceService) { }
+  constructor(private service:BlogserviceService,private router:Router) { }
 
   ngOnInit(): void {
+    // this.allBlogs=this.service.getDatas;
     this.allBlogs=this.service.getDatas;
+  }
+  readmore(blog:any){
+   
+    
+    console.log(blog);
+    this.router.navigateByUrl(blog);
+    
   }
 
 }

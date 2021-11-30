@@ -12,7 +12,9 @@
                 <h3>Author:<span>{{blog.author}}</span></h3>
                 <h3>Description:<span>{{blog.description}}</span></h3>
                 <!-- <a [routerLink]="['',{outlets:{blog:['blog',blog.url]}}]">Read More</a> -->
-                <a [routerLink]="['/blog',i]">Read More</a>
+                <!-- <a [routerLink]="['/blog/blog',i]">Read More</a> -->
+                <button (click)="readmore(blog.url)">Readmore</button>
+
             </div>
             
         </div>

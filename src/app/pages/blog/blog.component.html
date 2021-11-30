@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="container">
-        <div class="blogs">
+         <div class="blogs">
             <div class="blogimage">
                 <img src="{{blogs.urlToImage}}" *ngIf="blogs.urlToImage != null else image">
                 <ng-template #image>
@@ -16,6 +16,7 @@
             </div>
         </div>
         <button type="button" (click)="delete()">Delete</button>
-        <button type="button" (click)="update(blogs)">Update</button>
+        <button type="button" (click)="update()">Update</button>
+        <!-- <a routerLink="addblog/{{blogs.url}}">Update</a> -->
     </div>
 </div>

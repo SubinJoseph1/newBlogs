@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { BlogserviceService } from 'src/app/service/blogservice.service';
 
 @Component({
@@ -11,13 +12,14 @@ export class AddblogComponent implements OnInit {
   exform:any;
   blogmodle:any;
   updatevalue:any
-  constructor(private service:BlogserviceService) { 
+  constructor(private service:BlogserviceService,private active:ActivatedRoute) { 
     this.updatevalue=service.updatevalue
   }
 
   ngOnInit(): void {
     this.exform = new FormGroup({
       'title' : new FormControl('', Validators.required),
+      'url':new FormControl('',Validators.required),
       'description' : new FormControl('',Validators.required),
       'urlToImage' : new FormControl('',Validators.required),
       'publishedAt' : new FormControl('', Validators.required),
@@ -32,6 +34,7 @@ export class AddblogComponent implements OnInit {
 
       this.blogmodle={
         title:exform.value.title,
+        url:exform.value.url,
         description:exform.value.description,
         urlToImage:exform.value.urlToImage,
         publishedAt:exform.value.publishedAt,
@@ -43,6 +46,9 @@ export class AddblogComponent implements OnInit {
     }
     get title() {
       return this.exform.get('title');
+    }
+    get url() {
+      return this.exform.get('url');
     }
     get description() {
       return this.exform.get('description');

@@ -1,0 +1,17 @@
+.row-value{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.value-container{
+    width: 50%;
+    margin: 0 auto;
+}
+.value-container h3{
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+}
+.value-container span{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}

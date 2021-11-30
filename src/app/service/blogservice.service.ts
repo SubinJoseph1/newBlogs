@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -24,7 +25,10 @@ export class BlogserviceService {
     this.getData();
     
     this.userValue=JSON.parse(localStorage.getItem("userProfile")||"{}");
+    console.log("a",this.userValue);
+    
   }
+
   fetchAllBlogs(): Observable<any> {
     console.log("Data fetched");
     return this.http.get<any>("https://api.json-generator.com/templates/VUDUZd4V3QyJ/data?access_token=sdxv5aybndbk39af52pub0x8rlmyp6usm4glpoh2");
@@ -40,6 +44,7 @@ export class BlogserviceService {
     this.getDatas = JSON.parse(localStorage.getItem("blogs") || "{}");
   }
   formdata(formvalue: any) {
+    
     if (this.id1 == -1) {
       this.getDatas.push(formvalue);
     } else {
@@ -63,34 +68,44 @@ export class BlogserviceService {
     localStorage.setItem("blogs", JSON.stringify(this.getDatas));
   }
   specifigblog(id: any) {
-    console.log(id);
+    console.log("surl",id);
+    
     return this.getDatas[id];
   }
-  delete(id: any): void {
-    this.getDatas.splice(id, 1)
-    // Item to remove
-    //  const index: number = this.getDatas.indexOf(id);
-    //  if (index !== -1) {
-    //      this.getDatas.splice(index, 1);
-    //  }  
-    // this.getDatas=this.getDatas.splice(this.getDatas.indexOf(id), 0); 
-    // this.getDatas = this.getDatas.filter((item: any) => item != id);     
-    localStorage.setItem("blogs", JSON.stringify(this.getDatas));
-    return this.getDatas
-  }
+  // delete(url: any){
+  //   console.log("sin",url);
+  //   this.getDatas.splice(url,1);
+    
+  //   // this.getDatas.splice(id, 1);
+  //   // Item to remove
+  //   //  const index: number = this.getDatas.indexOf(id);
+  //   //  if (index !== -1) {
+  //   //      this.getDatas.splice(index, 1);
+  //   //  }  
+  //   // this.getDatas=this.getDatas.splice(this.getDatas.indexOf(id), 0); 
+  //   // this.getDatas = this.getDatas.filter((item: any) => item != id);     
+  //   localStorage.setItem("blogs", JSON.stringify(this.getDatas));
+  //   return this.getDatas
+  // }
   update(updateBlog: any, id: any) {
-    console.log(updateBlog);
-    console.log("1", id);
+    console.log("serviceu",updateBlog);
+    console.log("sid", id);
     this.updatevalue = updateBlog;
-    // this.id=id;
+    this.id=id;
     this.id1 = id;
     console.log("id", this.id1)
   }
   profileService(profileData: any) {
     console.log("profile", profileData);
     localStorage.setItem("userProfile", JSON.stringify(profileData));
+    
 
   }
+  // update1(urll:any){
+  //   console.log("aaaa",urll);
+    
+  //   return (localStorage.removeItem(`("blogs")/${urll}`))
+  // }
 }
 
 

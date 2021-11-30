@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="container">
-        <div class="blogs" *ngFor="let blog of allBlogs">
+        <div class="blogs" *ngFor="let blog of allBlogs;let i=index">
             <div class="blogImage">
                 <img src="{{blog.urlToImage}}" *ngIf="blog.urlToImage != null else image"> 
                 <ng-template #image>
@@ -13,7 +13,9 @@
                 <h3>Content:<span>{{blog.content}}</span></h3>
                 <h3>Description:<span>{{blog.description}}</span></h3>
                 <h3>Published At:<span>{{blog.publishedAt}}</span></h3>
+                <button (click)="readmore(blog.url)">Readmore</button>
             </div>
+           
         </div>
     </div>
 </div>
