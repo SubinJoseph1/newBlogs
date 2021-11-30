@@ -9,30 +9,24 @@ import { BlogserviceService } from 'src/app/service/blogservice.service';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor(private service:BlogserviceService,private router:Router) { }
-  userCheck:any;
-  
-  
- 
+  constructor(private service: BlogserviceService, private router: Router) { }
+  userCheck: any;
+  profilecheck:boolean=false;
+
+
   ngOnInit(): void {
-    this.userCheck=this.service.userValue;
-    console.log("u",this.userCheck);
-    // this.userCheck=this.service.userValue
-  
-    
-   
-  //  else{
-    
-    
-  //  }
-    
-    
-      
+    this.profilecheck = this.service.profilecheck();
+    this.userCheck = this.service.userValue;
+    console.log("u", this.userCheck);
+    if(this.profilecheck) {
+      this.userCheck = this.service.userValue();
+    }
   }
-  userUpdate(){
+ 
+  userUpdate() {
     this.router.navigateByUrl("profile/updateprofile");
-  }
-  create(){
-    this.router.navigateByUrl('/profile/createprofile')
-  }
+   }
+  // create() {
+  //   this.router.navigateByUrl('/profile/createprofile')
+  // }
 }

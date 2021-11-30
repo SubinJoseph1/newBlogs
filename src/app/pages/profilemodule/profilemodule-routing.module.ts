@@ -8,7 +8,7 @@ const routes: Routes = [
     path:'',
     component:UserDetailsComponent
   },{
-    path:'createprofile',
+    path:'create-profile',
     component:UserprofileComponent
   },
   {
