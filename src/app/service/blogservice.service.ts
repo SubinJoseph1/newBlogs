@@ -11,7 +11,8 @@ export class BlogserviceService {
   getDatas: any;
   retrive: any;
   id1 = -1;
-  userValue: any
+  userValue: any;
+  getDatas1:any;
   // value:boolean=false;
   id: any;
   updatevalue: any
@@ -26,7 +27,7 @@ export class BlogserviceService {
 
     this.userValue = JSON.parse(localStorage.getItem("userProfile") || "{}");
     console.log("a", this.userValue);
-
+    // this.reverseData();
   }
   profilecheck(): boolean {
     if (localStorage.getItem("userProfile")) {
@@ -46,12 +47,20 @@ export class BlogserviceService {
     this.getData();
   }
   getData() {
-    this.getDatas = JSON.parse(localStorage.getItem("blogs") || "{}").reverse();
+    this.getDatas = JSON.parse(localStorage.getItem("blogs") || "{}");
+    // this.reverseData();
     // this.getDatas.reverse();
     // localStorage.setItem("blogs",JSON.stringify(this.getDatas));
-    return this.getDatas;
+    //return this.getDatas;
+    // this.getDatas1=this.getDatas.slice().reverse();
+    // console.log("n",this.getDatas);
     
   }
+
+  
+    
+    
+  
   formdata(formvalue: any) {
 
     if (this.id1 == -1) {
@@ -107,7 +116,7 @@ export class BlogserviceService {
   profileService(profileData: any) {
     console.log("profile", profileData);
     localStorage.setItem("userProfile", JSON.stringify(profileData));
-
+    
 
   }
   // update1(urll:any){
@@ -115,6 +124,7 @@ export class BlogserviceService {
 
   //   return (localStorage.removeItem(`("blogs")/${urll}`))
   // }
+
 }
 
 

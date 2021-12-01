@@ -13,7 +13,7 @@ export class AllblogsComponent implements OnInit {
 
   ngOnInit(): void {
     // this.allBlogs=this.service.getDatas;
-    this.allBlogs=this.service.getDatas;
+    this.allBlogs=this.service.getDatas.slice().reverse();
   }
   readmore(blog:any){
    
