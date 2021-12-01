@@ -46,7 +46,11 @@ export class BlogserviceService {
     this.getData();
   }
   getData() {
-    this.getDatas = JSON.parse(localStorage.getItem("blogs") || "{}");
+    this.getDatas = JSON.parse(localStorage.getItem("blogs") || "{}").reverse();
+    // this.getDatas.reverse();
+    // localStorage.setItem("blogs",JSON.stringify(this.getDatas));
+    return this.getDatas;
+    
   }
   formdata(formvalue: any) {
 

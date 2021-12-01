@@ -26,7 +26,7 @@ export class UserprofileComponent implements OnInit {
       'fName': new FormControl(this.profile.fName, Validators.required),
       'lName': new FormControl(this.profile.lName, Validators.required),
       'email': new FormControl(this.profile.email, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-      'mobileNo': new FormControl(this.profile.mobileNo, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]),
+      'mobileNo': new FormControl(this.profile.mobileNo, [Validators.required, Validators.pattern("^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$")]),
       'address': new FormControl(this.profile.address, Validators.required),
       'country': new FormControl(this.profile.country, Validators.required),
       'textarea': new FormControl(this.profile.textarea, Validators.required)
