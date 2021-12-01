@@ -1,6 +1,7 @@
 <div class="container-fluid">
     <div class="container">
         <div class="blogs" *ngFor="let blog of homeBlogs;let i=index">
+            <div *ngIf="i < 5">
             <div class="blogImage">
                 <img src="{{blog.urlToImage}}"  *ngIf="blog.urlToImage != null else image"> 
                 <ng-template #image>
@@ -16,7 +17,7 @@
                 <button (click)="readmore(blog.url)">Readmore</button>
 
             </div>
-            
+         </div>
         </div>
     </div>
     <div class="clr"></div>
